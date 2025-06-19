@@ -1,94 +1,126 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
   text-align: center;
   margin: 0;
   padding: 40px 20px;
-  color: #333;
+  color: #f3f3f3;
 }
 
 .container {
   max-width: 500px;
   margin: auto;
-  padding: 30px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 32px 24px;
+  background: rgba(34, 40, 49, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(30, 34, 90, 0.18);
 }
 
 h1 {
   margin-bottom: 20px;
-  font-size: 2.2rem;
-  color: #444;
-  letter-spacing: 1px;
+  font-size: 2.3rem;
+  color: #a18cd1;
+  letter-spacing: 1.5px;
+  font-weight: 700;
 }
 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  grid-gap: 10px;
+  grid-gap: 14px;
   justify-content: center;
-  margin: 20px 0;
+  margin: 24px 0;
 }
 
 .cell {
   width: 100px;
   height: 100px;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-weight: bold;
-  background-color: #fafafa;
-  border: 2px solid #333;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  border: 2.5px solid #a18cd1;
+  color: #f3f3f3;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s, transform 0.2s;
-  border-radius: 10px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(161, 140, 209, 0.08);
+  transition: background 0.4s cubic-bezier(.4,2,.6,1), transform 0.25s cubic-bezier(.4,2,.6,1), color 0.3s;
+  position: relative;
+  overflow: hidden;
+  opacity: 0.95;
 }
 
 .cell:hover {
-  background-color: #f0f8ff;
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+  color: #232526;
+  transform: scale(1.08) rotate(-1deg);
+  z-index: 1;
+}
+
+.cell.marked {
+  animation: markPop 0.45s cubic-bezier(.4,2,.6,1);
+}
+
+@keyframes markPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .cell.win {
-  background-color: #c6f6d5 !important;
-  animation: winFlash 0.5s ease-in-out infinite alternate;
+  background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%) !important;
+  color: #fff !important;
+  animation: winFlash 0.8s cubic-bezier(.4,2,.6,1) infinite alternate;
+  box-shadow: 0 0 24px #43cea2, 0 0 40px #185a9d;
 }
 
 @keyframes winFlash {
   0% {
-    transform: scale(1);
-    background-color: #c6f6d5;
-    box-shadow: 0 0 10px #38a169;
+    filter: brightness(1.1);
+    box-shadow: 0 0 24px #43cea2, 0 0 40px #185a9d;
   }
   100% {
-    transform: scale(1.08);
-    background-color: #9ae6b4;
-    box-shadow: 0 0 20px #2f855a;
+    filter: brightness(1.3);
+    box-shadow: 0 0 40px #43cea2, 0 0 60px #185a9d;
   }
 }
 
 #status {
   font-size: 1.3rem;
   margin: 20px 0;
-  color: #2c5282;
+  color: #fbc2eb;
   font-weight: 600;
+  letter-spacing: 1px;
 }
 
 #restart-btn {
-  padding: 12px 24px;
-  font-size: 1rem;
-  background-color: #3182ce;
-  color: white;
+  padding: 14px 32px;
+  font-size: 1.08rem;
+  background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+  color: #232526;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(161, 140, 209, 0.12);
+  transition: background 0.3s, color 0.3s, transform 0.2s;
 }
 
 #restart-btn:hover {
-  background-color: #2b6cb0;
+  background: linear-gradient(90deg, #fbc2eb 0%, #a18cd1 100%);
+  color: #232526;
+  transform: scale(1.06);
 }
 
 @media (max-width: 480px) {
@@ -96,14 +128,12 @@ h1 {
     grid-template-columns: repeat(3, 80px);
     grid-gap: 8px;
   }
-
   .cell {
     width: 80px;
     height: 80px;
     font-size: 2rem;
   }
-
   .container {
-    padding: 20px;
+    padding: 16px 6px;
   }
 }

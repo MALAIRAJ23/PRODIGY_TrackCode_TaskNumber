@@ -1,48 +1,98 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #222;
-  color: #fff;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #222;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
 .container {
   text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  padding: 40px 32px 32px 32px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+h1 {
+  margin-bottom: 32px;
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #2563eb;
+  text-shadow: 0 2px 8px rgba(37,99,235,0.08);
 }
 
 .timer {
-  font-size: 4rem;
-  margin: 20px 0;
+  font-size: 4.5rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.45);
+  border-radius: 18px;
+  padding: 28px 60px;
+  margin: 36px 0 28px 0;
+  box-shadow: 0 4px 24px rgba(37,99,235,0.10);
+  letter-spacing: 4px;
+  color: #222;
+  border: 1.5px solid #e0e7ef;
+  transition: background 0.3s, color 0.3s;
+}
+
+.buttons {
+  margin: 18px 0 10px 0;
 }
 
 .buttons button {
-  font-size: 1rem;
-  padding: 10px 20px;
-  margin: 10px;
+  font-size: 1.15rem;
+  padding: 12px 32px;
+  margin: 0 10px;
   border: none;
-  background-color: #ffcc00;
-  color: #000;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+  color: #fff;
+  border-radius: 24px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.2s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 2px 12px rgba(37,99,235,0.10);
+  font-weight: 600;
+  letter-spacing: 1px;
+  outline: none;
 }
 
-.buttons button:hover {
-  background-color: #e6b800;
+.buttons button:hover, .buttons button:focus {
+  background: linear-gradient(135deg, #1d4ed8 0%, #38bdf8 100%);
+  box-shadow: 0 4px 24px rgba(37,99,235,0.18);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.buttons button:active {
+  background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+  box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+  transform: scale(0.98);
 }
 
 .laps {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
+  margin-top: 28px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .laps li {
-  background: #333;
-  padding: 10px;
-  margin: 5px auto;
-  max-width: 200px;
-  border-radius: 6px;
+  background: rgba(96,165,250,0.10);
+  padding: 12px 0;
+  margin: 8px auto;
+  max-width: 220px;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  color: #2563eb;
+  font-weight: 600;
+  box-shadow: 0 1px 6px rgba(37,99,235,0.07);
+  border: 1px solid #e0e7ef;
+  letter-spacing: 1px;
 }

@@ -3,80 +3,132 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Malai Raj | Web Developer</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>MALAI RAJ R | Portfolio</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <header class="navbar">
-    <h1 class="logo">Malai Raj</h1>
-    <nav>
-      <ul class="nav-menu">
+  <header>
+    <nav class="navbar" aria-label="Main Navigation">
+      <div class="nav-brand">
+        <h1>MALAI RAJ R</h1>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <img src="your-photo.jpg" alt="Your Photo" class="profile-photo" />
-      <h2>Hello, I'm <span>Malai Raj</span></h2>
-      <p>A passionate Full-Stack Developer based in Coimbatore</p>
-    </div>
-  </section>
+  <main>
+    <section id="home" class="hero">
+      <div class="content">
+        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="MALAI RAJ R profile picture" class="profile-pic"/>
+        <h2 class="typewriter" data-text="Hi, I'm MALAI RAJ R"></h2>
+        <p class="subtitle">A Passionate Web Developer</p>
+        <a href="#contact" class="cta-btn">Contact Me</a>
+      </div>
+    </section>
 
-  <!-- About Me -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>I’m currently pursuing my degree at CIT, Coimbatore. I enjoy solving complex problems and building intuitive user experiences. With a foundation in web technologies like HTML, CSS, JavaScript, Node.js, and Django, I’ve developed multiple academic and personal projects with real-world impact.</p>
-    <p><strong>Education:</strong> B.E. in Computer Science, CIT, Coimbatore</p>
-    <p><strong>Experience:</strong> Intern at XYZ Tech (2024), Freelance projects</p>
-  </section>
+    <section id="about" class="about-section">
+      <div class="about-card">
+        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="MALAI RAJ R" class="about-pic"/>
+        <div class="about-content">
+          <h2>About Me</h2>
+          <p>
+            I'm MALAI RAJ R, a dedicated and results-driven web developer with a flair for crafting seamless, user-friendly web applications. I specialize in both frontend and backend development and hold a Bachelor's degree in Computer Science. With a strong foundation in modern web technologies, I build responsive, accessible, and performance-optimized applications. I'm passionate about continuous learning, design thinking, and solving real-world problems with clean, efficient code.
+          </p>
+          <div class="social-links">
+            <a href="https://github.com/MALAIRAJ23" target="_blank" aria-label="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"/></a>
+            <a href="mailto:malairaj.r23@gmail.com" aria-label="Email"><img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email"/></a>
+            <!-- Add more social links as needed -->
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <ul class="project-list">
-      <li><strong>Diabetes Tracker App</strong> – Built with Django + React, integrated Firebase, meal suggestions, and affirmations</li>
-      <li><strong>Carpool Web App</strong> – Node.js backend with PostgreSQL, EJS templating and responsive UI</li>
-      <li><strong>File Sharing GUI</strong> – JavaFX + Sockets + AES encryption for multi-user PC file transfer</li>
-    </ul>
-  </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"/>HTML5</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"/>CSS3 / Tailwind / Bootstrap</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/>JavaScript / React</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/>Node.js / Express</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"/>MongoDB / MySQL</li>
+        <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>Git / GitHub</li>
+        <li><img src="https://img.icons8.com/ios-filled/50/000000/api-settings.png" alt="API"/>API Integration</li>
+        <li><img src="https://img.icons8.com/ios-filled/50/000000/responsive.png" alt="Responsive Design"/>Responsive Design</li>
+        <li><img src="https://img.icons8.com/ios-filled/50/000000/design.png" alt="UI/UX"/>UI/UX Principles</li>
+      </ul>
+    </section>
 
-  <!-- Skills -->
-  <section id="skills" class="section">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>React</span>
-      <span>Node.js</span>
-      <span>Django</span>
-      <span>PostgreSQL</span>
-      <span>Firebase</span>
-      <span>Java</span>
-      <span>Python</span>
-    </div>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="https://img.icons8.com/color/96/mental-health.png" alt="EUONIA App" class="project-img"/>
+          <div class="project-content">
+            <h3>EUONIA</h3>
+            <p>EUONIA is a comprehensive mental health monitoring application designed to analyze user sentiment, detect early warning signs, and provide supportive resources for emotional well-being.</p>
+            <div class="project-tags"><span>Mental Health</span><span>AI</span><span>React</span></div>
+            <a href="https://github.com/MALAIRAJ23/webproject" target="_blank" class="project-link">View Project</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://img.icons8.com/ios-filled/100/000000/partly-cloudy-day--v1.png" alt="Weather App" class="project-img"/>
+          <div class="project-content">
+            <h3>Weather App</h3>
+            <p>Real-time weather using geolocation and APIs.</p>
+            <div class="project-tags"><span>Weather</span><span>API</span><span>JavaScript</span></div>
+            <a href="https://github.com/MALAIRAJ23/PRODIGY_TrackCode_TaskNumber/tree/main/PRODIGY_WD_05" target="_blank" class="project-link">View Project</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://img.icons8.com/ios-filled/100/000000/monitor--v1.png" alt="Portfolio Website" class="project-img"/>
+          <div class="project-content">
+            <h3>Portfolio Website</h3>
+            <p>This portfolio site built with love and CSS animations.</p>
+            <div class="project-tags"><span>Portfolio</span><span>HTML/CSS</span><span>Responsive</span></div>
+            <a href="https://github.com/MALAIRAJ23/PRODIGY_TrackCode_TaskNumber/tree/main/PRODIGY_WD_04" target="_blank" class="project-link">View Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:iammalairaj@gmail.com">iammalairaj@gmail.com</a></p>
-    <p>📱 <a href="tel:+911234567890">+91 12345 67890</a></p>
-    <p>🌐 <a href="https://www.linkedin.com/in/malai-raj-8ba975292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a></p>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <form class="contact-form" autocomplete="off">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="cta-btn">Send Message</button>
+      </form>
+      <div class="contact-social">
+        <a href="mailto:malairaj.r23@gmail.com" aria-label="Email"><img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email"/></a>
+        <a href="https://github.com/MALAIRAJ23" target="_blank" aria-label="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"/></a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Malai Raj. All rights reserved.</p>
+    <p>© 2025 MALAI RAJ R </p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

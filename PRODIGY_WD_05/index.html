@@ -7,16 +7,20 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="container">
-    <h1>🌤️ Weather Forecast</h1>
-    <div class="search-box">
-      <input type="text" id="cityInput" placeholder="Enter a city..." />
-      <button id="searchBtn">Search</button>
-    </div>
-    <div class="weather-box" id="weatherBox">
-      <p>Fetching weather...</p>
-    </div>
-  </div>
+  <main class="weather-main">
+    <section class="weather-card">
+      <header class="weather-header">
+        <h1 class="app-title">Weather App</h1>
+        <form class="weather-search" autocomplete="off" onsubmit="return false;">
+          <input type="text" id="cityInput" class="search-input" placeholder="Enter city name..." />
+          <button id="searchBtn" class="search-btn" aria-label="Search"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+        </form>
+      </header>
+      <div class="weather-info" id="weatherBox">
+        <p>Fetching weather...</p>
+      </div>
+    </section>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>

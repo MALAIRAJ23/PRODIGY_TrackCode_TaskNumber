@@ -20,6 +20,7 @@
 
       gameState[index] = currentPlayer;
       e.target.textContent = currentPlayer;
+      e.target.classList.add("marked");
 
       const winCombo = checkWin();
       if (winCombo) {
@@ -67,6 +68,7 @@
       cells.forEach(cell => {
         cell.textContent = "";
         cell.classList.remove("win");
+        cell.classList.remove("marked");
       });
     }
 

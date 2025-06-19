@@ -1,56 +1,71 @@
-let timerDisplay = document.getElementById("timer");
-let startStopBtn = document.getElementById("startStop");
-let lapBtn = document.getElementById("lap");
-let resetBtn = document.getElementById("reset");
-let lapsContainer = document.getElementById("laps");
+function pad(num) {
+  return String(num).padStart(2, '0');
+}
 
+// Stopwatch logic
 let startTime = 0;
 let elapsedTime = 0;
 let interval = null;
 let isRunning = false;
+const timerDisplay = document.getElementById("timer");
+const lapsContainer = document.getElementById("laps");
+const startStopBtn = document.getElementById('startStop');
+const resetBtn = document.getElementById('reset');
+const lapBtn = document.getElementById('lap');
 
-function formatTime(ms) {
-  let date = new Date(ms);
-  let min = String(date.getUTCMinutes()).padStart(2, '0');
-  let sec = String(date.getUTCSeconds()).padStart(2, '0');
-  let msStr = String(Math.floor(date.getUTCMilliseconds() / 10)).padStart(2, '0');
-  return `${min}:${sec}:${msStr}`;
+function getTimeParts(ms) {
+  let min = Math.floor(ms / 60000);
+  let sec = Math.floor((ms % 60000) / 1000);
+  let cs = Math.floor((ms % 1000) / 10);
+  return [pad(min), pad(sec), pad(cs)];
 }
 
-function startTimer() {
+function updateStopwatchDisplay(ms) {
+  const [min, sec, cs] = getTimeParts(ms);
+  timerDisplay.textContent = `${min}:${sec}:${cs}`;
+}
+
+function startStopwatch() {
   startTime = Date.now() - elapsedTime;
   interval = setInterval(() => {
     elapsedTime = Date.now() - startTime;
-    timerDisplay.textContent = formatTime(elapsedTime);
+    updateStopwatchDisplay(elapsedTime);
   }, 10);
   isRunning = true;
-  startStopBtn.textContent = "Pause";
+  startStopBtn.textContent = 'Pause';
 }
 
-function stopTimer() {
+function stopStopwatch() {
   clearInterval(interval);
   isRunning = false;
-  startStopBtn.textContent = "Start";
+  startStopBtn.textContent = 'Start';
 }
 
-startStopBtn.addEventListener("click", () => {
+function resetStopwatch() {
+  stopStopwatch();
+  elapsedTime = 0;
+  updateStopwatchDisplay(0);
+  lapsContainer.innerHTML = '';
+}
+
+function lapStopwatch() {
+  if (!isRunning) return;
+  const [min, sec, cs] = getTimeParts(elapsedTime);
+  const li = document.createElement('li');
+  li.textContent = `${min}:${sec}:${cs}`;
+  lapsContainer.appendChild(li);
+}
+
+startStopBtn.addEventListener('click', () => {
   if (isRunning) {
-    stopTimer();
+    stopStopwatch();
   } else {
-    startTimer();
+    startStopwatch();
   }
 });
 
-resetBtn.addEventListener("click", () => {
-  stopTimer();
-  elapsedTime = 0;
-  timerDisplay.textContent = "00:00:00";
-  lapsContainer.innerHTML = "";
-});
+resetBtn.addEventListener('click', resetStopwatch);
+lapBtn.addEventListener('click', lapStopwatch);
 
-lapBtn.addEventListener("click", () => {
-  if (!isRunning) return;
-  const li = document.createElement("li");
-  li.textContent = formatTime(elapsedTime);
-  lapsContainer.appendChild(li);
-});
+// Initialize display to 00:00:00
+updateStopwatchDisplay(0);

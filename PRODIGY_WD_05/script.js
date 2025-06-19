@@ -60,21 +60,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setBackground(condition) {
     const body = document.body;
-
+    let weatherType = "default";
     if (condition.includes("clear")) {
-      body.style.background = "linear-gradient(to right, #56ccf2, #2f80ed)";
+      weatherType = "clear";
     } else if (condition.includes("cloud")) {
-      body.style.background = "linear-gradient(to right, #bdc3c7, #2c3e50)";
+      weatherType = "cloud";
     } else if (condition.includes("rain") || condition.includes("drizzle")) {
-      body.style.background = "linear-gradient(to right, #4e54c8, #8f94fb)";
+      weatherType = "rain";
     } else if (condition.includes("thunder")) {
-      body.style.background = "linear-gradient(to right, #373B44, #4286f4)";
+      weatherType = "thunder";
     } else if (condition.includes("snow")) {
-      body.style.background = "linear-gradient(to right, #83a4d4, #b6fbff)";
+      weatherType = "snow";
     } else if (condition.includes("fog") || condition.includes("mist") || condition.includes("haze")) {
-      body.style.background = "linear-gradient(to right, #757F9A, #D7DDE8)";
-    } else {
-      body.style.background = "linear-gradient(to right, #74ebd5, #9face6)";
+      weatherType = "fog";
     }
+    body.setAttribute('data-weather', weatherType);
   }
 });
